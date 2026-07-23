@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaAI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="logo">🚀 NovaAI</div>
+
+        <nav>
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">Neue Aufgabe</a>
+            <a href="#">Chats</a>
+            <a href="#">Vorlagen</a>
+            <a href="#">Dokumente</a>
+            <a href="#">Kalender</a>
+            <a href="#">Einstellungen</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header>
+            <h1>Willkommen bei NovaAI</h1>
+            <p>Dein digitaler KI-Mitarbeiter</p>
+        </header>
+
+        <section class="hero">
+            <h2>Was soll NovaAI heute erledigen?</h2>
+
+            <form method="POST" class="task-form">
+
+                <textarea
+                    name="aufgabe"
+                    placeholder="Zum Beispiel: Schreibe eine professionelle E-Mail an einen Kunden."
+                    required></textarea>
+
+                <button type="submit">
+                    Aufgabe starten
+                </button>
+
+            </form>
+        </section>
+
+        <section class="quick-actions">
+            <button>E-Mail schreiben</button>
+            <button>Angebot erstellen</button>
+            <button>Text verbessern</button>
+            <button>Zusammenfassen</button>
+        </section>
+
+        {% if antwort %}
+        <section class="answer-card">
+            <h3>Antwort von NovaAI</h3>
+            <p>{{ antwort }}</p>
+        </section>
+        {% endif %}
+
+    </main>
+
+</div>
+
+</body>
+</html>
